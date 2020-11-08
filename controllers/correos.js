@@ -44,24 +44,18 @@ exports.correosAdjuntos = async (req, res) => {
       // const Adjuntos = req.body.adjuntos;
       // let testAccount = await nodemailer.createTestAccount();
       let transporter = nodemailer.createTransport({
-        pool: true,
-        host: 'mail.jialdelperu.com',
+        host: 'smtp.gmail.com',
         secureConnection: true,
-        secure: true, // true for 465, false for other ports
         port: 465,
         transportMethod: 'SMTP',
         auth: {
-          user: "sjservi@jialdelperu.com", // generated ethereal user
-          pass: "sjservi--001.", // generated ethereal password
-        },
-        tls: {
-          // do not fail on invalid certs
-          rejectUnauthorized: false,
+          user: "miguekos1233@gmail.com", // generated ethereal user
+          pass: "Alex2513.", // generated ethereal password
         }
       });
 
       let info = await transporter.sendMail({
-        from: "sjservi@jialdelperu.com", // sender address
+        from: "miguekos1233@gmail.com", // sender address
         to: params.no_correo ? params.no_correo : "", // list of receivers
         cc: req.body.cc ? req.body.cc : "", // list of receivers
         bcc: req.body.bcc ? req.body.bcc : "", // list of receivers
