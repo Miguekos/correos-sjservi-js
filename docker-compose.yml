@@ -13,5 +13,5 @@ services:
       # - .:/usr/src
       - /usr/local/volumes/correo-sjservi-js/var/log:/root/.pm2/logs
 
-    command: pm2-runtime server.config.js --env development
-    # command: pm2-runtime server.config.js --env production
+    # command: pm2-runtime server.config.js --env development
+    command: pm2-runtime server.config.js --env production
