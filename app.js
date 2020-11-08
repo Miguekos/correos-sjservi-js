@@ -58,8 +58,8 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/v1.0/correos/:id", correosController.correosAdjuntos);
-app.post("/v1.0/correos", correosController.correosAdjuntosArray);
+app.get("/sjservi/v1.0/correos/:id", correosController.correosAdjuntos);
+app.post("/sjservi/v1.0/correos", correosController.correosAdjuntosArray);
 
 /**
  * Iniciando Servidor.
