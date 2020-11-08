@@ -45,13 +45,19 @@ exports.correosAdjuntos = async (req, res) => {
       // let testAccount = await nodemailer.createTestAccount();
       let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
+        pool: true,
         secureConnection: true,
         port: 465,
+        secure: true, // true for 465, false for other ports
         transportMethod: 'SMTP',
         auth: {
           user: "miguekos1233@gmail.com", // generated ethereal user
           pass: "Alex2513.", // generated ethereal password
-        }
+        },
+        tls: {
+          // do not fail on invalid certs
+          rejectUnauthorized: false,
+        },
       });
 
       let info = await transporter.sendMail({
@@ -136,13 +142,19 @@ exports.correosAdjuntosArray = async (req, res) => {
       // let testAccount = await nodemailer.createTestAccount();
       let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
+        pool: true,
         secureConnection: true,
         port: 465,
+        secure: true, // true for 465, false for other ports
         transportMethod: 'SMTP',
         auth: {
           user: "miguekos1233@gmail.com", // generated ethereal user
           pass: "Alex2513.", // generated ethereal password
-        }
+        },
+        tls: {
+          // do not fail on invalid certs
+          rejectUnauthorized: false,
+        },
       });
 
       let info = await transporter.sendMail({
