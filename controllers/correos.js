@@ -12,7 +12,7 @@ exports.correosAdjuntos = async (req, res) => {
     async function traerInfo(params) {
       const getInfo = await axios({
         method: "GET",
-        url: `http://localhost:4100/api/apis/correos?persona=${params}`
+        url: `${process.env.LP_SJ}/api/apis/correos?persona=${params}`
       })
 
       console.log(getInfo.data[0]);

@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  services_correo_sjservi:
+    # image: api-sjservi-js:1.1
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 6041:6041
+      # - 6010:6010
+    volumes:
+      # - .:/usr/src
+      - /usr/local/volumes/correo-sjservi-js/var/log:/root/.pm2/logs
+
+    command: pm2-runtime server.config.js --env development
+    # command: pm2-runtime server.config.js --env production
