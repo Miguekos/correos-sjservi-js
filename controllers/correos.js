@@ -51,8 +51,8 @@ exports.correosAdjuntos = async (req, res) => {
         secure: true, // true for 465, false for other ports
         transportMethod: 'SMTP',
         auth: {
-          user: `${process.env.CORREO}`, // generated ethereal user
-          pass: `${process.env.PASS}`, // generated ethereal password
+          user: "miguekos1233@gmail.com", // generated ethereal user
+          pass: "Alex2513.", // generated ethereal password
         },
         tls: {
           // do not fail on invalid certs
@@ -148,8 +148,8 @@ exports.correosAdjuntosArray = async (req, res) => {
         secure: true, // true for 465, false for other ports
         transportMethod: 'SMTP',
         auth: {
-          user: `${process.env.CORREO}`, // generated ethereal user
-          pass: `${process.env.PASS}`, // generated ethereal password
+          user: "miguekos1233@gmail.com", // generated ethereal user
+          pass: "Alex2513.", // generated ethereal password
         },
         tls: {
           // do not fail on invalid certs
@@ -256,8 +256,8 @@ exports.correosMasivoSimple = async (req, res) => {
         secure: true, // true for 465, false for other ports
         transportMethod: 'SMTP',
         auth: {
-          user: `${process.env.CORREO}`, // generated ethereal user
-          pass: `${process.env.PASS}`, // generated ethereal password
+          user: "miguekos1233@gmail.com", // generated ethereal user
+          pass: "Alex2513.", // generated ethereal password
         },
         tls: {
           // do not fail on invalid certs
