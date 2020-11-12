@@ -34,12 +34,18 @@ exports.correosAdjuntos = async (req, res) => {
       console.log("mensaje", req.body.mensaje);
       console.log("html", req.body.html);
       console.log("adjuntos", req.body.adjuntos);
-      const Adjuntos = [
-        {
-          "filename": "Catalogo.pdf",
-          "path": params.no_arcadj
-        }
-      ]
+      let Adjuntos = []
+      if (params.no_arcadj) {
+        Adjuntos = [
+          {
+            "filename": "Catalogo.pdf",
+            "path": params.no_arcadj
+          }
+        ]
+      } else {
+        Adjuntos = []
+      }
+      
 
       // const Adjuntos = req.body.adjuntos;
       // let testAccount = await nodemailer.createTestAccount();
