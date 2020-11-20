@@ -9,10 +9,10 @@ const nodemailer = require("nodemailer");
  */
 exports.correosAdjuntos = async (req, res) => {
   try {
-    async function traerInfo(params) {
+    async function traerInfo(person, id) {
       const getInfo = await axios({
         method: "GET",
-        url: `${process.env.LP_SJ}/api/apis/correos?persona=${params}`
+        url: `${process.env.LP_SJ}/api/apis/correos?persona=${person}&id=${id}`
       })
 
       console.log(getInfo.data[0]);
@@ -86,7 +86,7 @@ exports.correosAdjuntos = async (req, res) => {
       // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
     }
 
-    traerInfo(req.params.id)
+    traerInfo(req.params.person ,req.params.id)
 
   } catch (e) {
     Raven.captureException(e, {

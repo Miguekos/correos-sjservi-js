@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/sjservi/v1.0/correos/:id", correosController.correosAdjuntos);
+app.get("/sjservi/v1.0/correos/:person/:id", correosController.correosAdjuntos);
 app.post("/sjservi/v1.0/correos", correosController.correosAdjuntosArray);
 app.post("/sjservi/v1.0/correosMasivoSimple", correosController.correosMasivoSimple);
 
