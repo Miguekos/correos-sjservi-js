@@ -73,7 +73,7 @@ exports.correosAdjuntos = async (req, res) => {
         bcc: req.body.bcc ? req.body.bcc : "", // list of receivers
         subject: params.asunto ? params.asunto : "", // Subject line
         text: req.body.mensaje ? req.body.mensaje : "", // plain text body
-        html: params.no_mensaj ? params.no_mensaj : "", // html body
+        html: params.mensaje ? params.mensaje : "", // html body
         attachments: Adjuntos,
       });
       console.log(info);
