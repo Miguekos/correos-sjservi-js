@@ -15,22 +15,22 @@ exports.correosAdjuntos = async (req, res) => {
         url: `${process.env.LP_SJ}/api/apis/correos?persona=${person}&id=${id}`
       })
 
-      console.log(getInfo.data[0]);
+      console.log(getInfo.data[0].correo_consulta);
       // for (let index = 0; index < array.length; index++) {
       //   const element = array[index];
 
       // }
-      main(getInfo.data[0]).catch(console.error);
+      main(getInfo.data[0].correo_consulta).catch(console.error);
 
     }
 
     async function main(params) {
 
       // console.log(req.body.de);
-      console.log("para", params.no_correo);
+      console.log("para", params.correo);
       console.log("cc", req.body.cc);
       console.log("bcc", req.body.bcc);
-      console.log("asunto", params.no_asunto);
+      console.log("asunto", params.asunto);
       console.log("mensaje", req.body.mensaje);
       console.log("html", req.body.html);
       console.log("adjuntos", req.body.adjuntos);
@@ -68,10 +68,10 @@ exports.correosAdjuntos = async (req, res) => {
 
       let info = await transporter.sendMail({
         from: "miguekos1233@gmail.com", // sender address
-        to: params.no_correo ? params.no_correo : "", // list of receivers
+        to: params.correo ? params.correo : "", // list of receivers
         cc: req.body.cc ? req.body.cc : "", // list of receivers
         bcc: req.body.bcc ? req.body.bcc : "", // list of receivers
-        subject: params.no_asunto ? params.no_asunto : "", // Subject line
+        subject: params.asunto ? params.asunto : "", // Subject line
         text: req.body.mensaje ? req.body.mensaje : "", // plain text body
         html: params.no_mensaj ? params.no_mensaj : "", // html body
         attachments: Adjuntos,
@@ -136,10 +136,10 @@ exports.correosAdjuntosArray = async (req, res) => {
     async function enviarCorreo(params, Adjuntos) {
 
       // console.log(req.body.de);
-      console.log("para", params.no_correo);
+      console.log("para", params.correo);
       console.log("cc", req.body.cc);
       console.log("bcc", req.body.bcc);
-      console.log("asunto", params.no_asunto);
+      console.log("asunto", params.asunto);
       console.log("mensaje", req.body.mensaje);
       console.log("html", req.body.html);
       // console.log("adjuntos", req.body.adjuntos);
@@ -165,10 +165,10 @@ exports.correosAdjuntosArray = async (req, res) => {
 
       let info = await transporter.sendMail({
         from: "miguekos1233@gmail.com", // sender address
-        to: params.no_correo ? params.no_correo : "", // list of receivers
+        to: params.correo ? params.correo : "", // list of receivers
         cc: req.body.cc ? req.body.cc : "miguekos1233@gmail.com", // list of receivers
         bcc: req.body.bcc ? req.body.bcc : "", // list of receivers
-        subject: params.no_asunto ? params.no_asunto : "", // Subject line
+        subject: params.asunto ? params.asunto : "", // Subject line
         text: req.body.mensaje ? req.body.mensaje : "", // plain text body
         html: params.no_mensaj ? params.no_mensaj : "", // html body
         attachments: Adjuntos,
@@ -238,10 +238,10 @@ exports.correosMasivoSimple = async (req, res) => {
     async function enviarCorreo(params) {
 
       // console.log(req.body.de);
-      console.log("para", params.no_correo);
+      console.log("para", params.correo);
       console.log("cc", req.body.cc);
       console.log("bcc", req.body.bcc);
-      console.log("asunto", params.no_asunto);
+      console.log("asunto", params.asunto);
       console.log("mensaje", req.body.mensaje);
       console.log("html", req.body.html);
       const Adjuntos = [
@@ -273,10 +273,10 @@ exports.correosMasivoSimple = async (req, res) => {
 
       let info = await transporter.sendMail({
         from: "miguekos1233@gmail.com", // sender address
-        to: params.no_correo ? params.no_correo : "", // list of receivers
+        to: params.correo ? params.correo : "", // list of receivers
         cc: req.body.cc ? req.body.cc : "miguekos1233@gmail.com", // list of receivers
         bcc: req.body.bcc ? req.body.bcc : "", // list of receivers
-        subject: params.no_asunto ? params.no_asunto : "", // Subject line
+        subject: params.asunto ? params.asunto : "", // Subject line
         text: req.body.mensaje ? req.body.mensaje : "", // plain text body
         html: params.no_mensaj ? params.no_mensaj : "", // html body
         attachments: Adjuntos,
